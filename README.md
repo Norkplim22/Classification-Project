@@ -43,5 +43,8 @@ After, five models were trained and predicted on the evaluation set. Five evalua
 # Hyperparameter tuning
 To confirm our best performing model, some parameters were tuned to improve the performance of the models using the GridCV and searcher. After the hyperparameter tuning, the logistic regressor still performed better.
 
+## Medium article
+https://medium.com/@cnorkplim/predicting-customer-churn-rate-using-classification-analysis-4a63e1c1c356
+
 ## Author
 Linda Adzigbli
