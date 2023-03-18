@@ -23,40 +23,25 @@ Which payment method is the most popular?
 
 
 # Data cleaning
-The data in question had no directly visible missing data because the various columns were not in the right datatype. Details of the columns are listed below.
-Gender -- Whether the customer is a male or a female
-SeniorCitizen -- Whether a customer is a senior citizen or not
-Partner -- Whether the customer has a partner or not (Yes, No)
-Dependents -- Whether the customer has dependents or not (Yes, No)
-Tenure -- Number of months the customer has stayed with the company
-Phone Service -- Whether the customer has a phone service or not (Yes, No)
-MultipleLines -- Whether the customer has multiple lines or not
-InternetService -- Customer's internet service provider (DSL, Fiber Optic, No)
-OnlineSecurity -- Whether the customer has online security or not (Yes, No, No Internet)
-OnlineBackup -- Whether the customer has online backup or not (Yes, No, No Internet)
-DeviceProtection -- Whether the customer has device protection or not (Yes, No, No internet service)
-TechSupport -- Whether the customer has tech support or not (Yes, No, No internet)
-StreamingTV -- Whether the customer has streaming TV or not (Yes, No, No internet service)
-StreamingMovies -- Whether the customer has streaming movies or not (Yes, No, No Internet service)
-Contract -- The contract term of the customer (Month-to-Month, One year, Two year)
-PaperlessBilling -- Whether the customer has paperless billing or not (Yes, No)
-Payment Method -- The customer's payment method (Electronic check, mailed check, Bank transfer(automatic), Credit card(automatic))
-MonthlyCharges -- The amount charged to the customer monthly
-TotalCharges -- The total amount charged to the customer
-Churn -- Whether the customer churned or not (Yes or No)
-
-After the datatype conversion, all missing values were replaced with median values
+The data in question had no duplicates and directly visible missing data because the various columns were not in the right datatype. After the datatype conversion, all missing values were replaced with median values
 
 # Exploratory data analysis
+From the analysis, higher prices were associated with streaming movies and with subscribing to all phone and internet services. Furthermore, the most popular payment method was electronic checks.
+When it comes to churning, factors like contract type, relationship status and age class influences churning. People on month to month contract have a higher chance of churning, so are senior citizens (from the data 41% of senior citizens churned). Also, people with partners churn less.
 
 # Feature engineering
+Initially, some columns were feature engineered to reduce the total number of columns. However, after modelling, the evaluation metrics of the model were lower hence in the quest to improve the models, no column was feature engineered to help the modelling process.
 
 
 # Encoding and scaling
+For feature encoding, label and onehot encoders were used. The label encoder was used to encode the dependent variable churn, and the one-hot encoder for the categorical columns. The remaining numerical columns were scaled using the standard scaler to get all variable into the same scale.
 
 # Modelling and evaluation metrics
+After data preparation, the processed data was split into train and evaluation set.
+After, five models were trained and predicted on the evaluation set. Five evaluation metrics were used to evaluate the various models trained. Unfortunately, our dependent variable had a class imbalance hence our final evaluation metrics were the f1 and fbeta score and not accuracy, precision and recall. Based on the metrics, the best performing model was the logistic regression classifier.
 
 # Hyperparameter tuning
+To confirm our best performing model, some parameters were tuned to improve the performance of the models using the GridCV and searcher. After the hyperparameter tuning, the logistic regressor still performed better.
 
 ## Author
 Linda Adzigbli
