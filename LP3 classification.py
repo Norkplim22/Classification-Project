@@ -349,8 +349,8 @@ plt.tick_params(axis='x', labelrotation=45)
 People on month to month contract have a higher chance of churning.
 Senior citizens have higher chance of churning (from the data 41% of senior citizens churned)
 People with partners churn less.
-People with dependents
-Gender
+People without dependents are more likely to churn
+Churning is independent of the gender type
 # In[33]:
 
 
