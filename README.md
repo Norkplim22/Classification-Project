@@ -38,7 +38,7 @@ For feature encoding, label and onehot encoders were used. The label encoder was
 
 # Modelling and evaluation metrics
 After data preparation, the processed data was split into train and evaluation set.
-After, five models were trained and predicted on the evaluation set. Five evaluation metrics were used to evaluate the various models trained. Unfortunately, our dependent variable had a class imbalance hence our final evaluation metrics were the f1 and fbeta score and not accuracy, precision and recall. Based on the metrics, the best performing model was the logistic regression classifier.
+After, five models were trained and predicted on the evaluation set. Five evaluation metrics were used to evaluate the various models trained. Unfortunately, our dependent variable had a class imbalance hence our final evaluation metrics were the f1 and fbeta score and not accuracy, precision and recall. Also, because of the class unbalance, the metrics were quite low so the next approach is to balance the data before modelling. However, based on the metrics, the best performing model was the logistic regression classifier.
 
 # Hyperparameter tuning
 To confirm our best performing model, some parameters were tuned to improve the performance of the models using the GridCV and searcher. After the hyperparameter tuning, the logistic regressor still performed better.
